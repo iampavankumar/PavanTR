@@ -1,0 +1,8 @@
+.card{
+    background: linear-gradient(to bottom, #40e0d0, #ff8c00, #ff0080);    /* color: red; */   
+    
+    margin: 0 auto;
+}
+.card-2{
+    background: #bbd2c5;
+}

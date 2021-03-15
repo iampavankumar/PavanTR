@@ -1,0 +1,40 @@
+<h1>Bindings</h1>
+
+<ol>
+    <li>
+        <h6>Property Binding</h6>
+        <img [src]="imgB" alt="" width="250" height="200">
+    </li>
+    <li>
+        <h6>Class Binding</h6>
+        <button [class.btnSubmit]="isTrue" >Submit</button>
+    </li>
+    <li>
+        <h6>Attribute Binding</h6>
+        <table>
+            <tr>
+                <td [attr.colspan]="ColSpan">Three</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+            </tr>
+        </table>
+    </li>
+    <li>
+        <h6>style Binding</h6>
+        <h1 [style.color]="isColor? 'blue' : 'red'" >This is a Blue Heading</h1>
+    </li>
+
+    <li>
+        <h6>event Binding</h6>
+        <button (click)="clickEvent()">Event Binding</button><br>
+        <input type="text" name="fname" id="" placeholder="Event Binding" (keyup)="keyupEvent($event)">
+    </li>
+</ol>
+
+<h2>Two Way Event Binding</h2>
+
+<input type="text" name="" id="" [(ngModel)]="uname">
+<div>{{uname}}</div>

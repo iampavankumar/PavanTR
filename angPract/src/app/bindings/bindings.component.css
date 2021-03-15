@@ -1,0 +1,13 @@
+.btnSubmit{
+    background: red;
+    color: #fff;
+    width: 100px;
+    height: 50px;
+    text-transform: uppercase;
+    font-style: 18px;
+}
+.btnSubmit:hover{
+    transform: translateY(3px);
+    /* transform: rotate(90deg); */
+
+}

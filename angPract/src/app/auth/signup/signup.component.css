@@ -1,0 +1,8 @@
+.card{
+    background: linear-gradient(to bottom, #12c2e9, #c471ed, #f64f59); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.card label{
+color: #1f1c2c;
+font-weight: 700;
+
+}

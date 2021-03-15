@@ -1,0 +1,88 @@
+<ol>
+    <li>Structural Directives</li>
+</ol>
+
+
+<div *ngIf='employees.length>0'>
+    <p class="p-3 mb-2 bg-success text-white">Users are there</p>
+</div>
+
+<div *ngIf='employees.length==0'>
+    <p class="p-3 mb-2 bg-danger text-white">Users are not there</p>
+</div>
+
+<div *ngIf='users.length>0'>
+    <p class="p-3 mb-2 bg-success text-white">Users are there</p>
+</div>
+
+<div *ngIf='users.length==0'>
+    <p class="p-3 mb-2 bg-danger text-white">Users are not there</p>
+</div>
+
+
+<div *ngIf="employees.length>0; then emp else noemp"></div>
+<ng-template #emp>
+    <p class="p-3 mb-2 bg-success text-white">Users are there--Ag4 way</p>
+</ng-template>
+
+
+<ng-template #noemp>
+    <p class="p-3 mb-2 bg-danger text-white">Users are not there</p>
+</ng-template>
+
+
+
+<h2 class="text-primary">ngFor</h2>
+
+<button class='btn btn-primary btn-block' (click)='addEmp()'>add employees</button>
+
+<table class="table mt-4">
+    <thead class="thead-dark">
+        <tr>
+            <th>Index</th>
+            <th>empId</th>
+            <th>empName</th>
+            <th>empImg</th>
+            <th>empSal</th>
+            <th>empComp</th>
+            <th>empLoc</th>
+            <th>empDOJ</th>
+            <th>empDest</th>
+            <th>empEdu</th>
+            <th>empCol</th>
+            <th>Remove</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let emp of employees; index as i"
+            [ngStyle]="{'color':'white','padding':'10px','background-color':emp.empComp==='Oracle'?'red':'green'}">
+            <td><span class="badge badge-success">{{i+1}}</span></td>
+            <td>{{emp.empID}}</td>
+            <td>{{emp.empName}}</td>
+            <td><img src="{{emp.empImg}}" class="img-fluid rounded" srcset="" alt="image"></td>
+            <td>{{emp.empSal}}</td>
+            <td>{{emp.empComp}}</td>
+            <td>{{emp.empLoc}}</td>
+            <td>{{emp.empDOJ}}</td>
+            <td>{{emp.empDest}}</td>
+            <td>{{emp.empEdu}}</td>
+            <td>{{emp.empCol}}</td>
+            <td><button class="btn btn-danger" (click)="removeEmp(emp)">Remove</button></td>
+        </tr>
+    </tbody>
+</table>
+
+
+<span [ngSwitch]='color'>
+    <p *ngSwitchCase='"red"  '> Red Color</p>
+    <p *ngSwitchCase='"Green"'> Green Color</p>
+    <p *ngSwitchCase='"pink"'> pink Color</p>
+    <p *ngDefault> no colour</p>
+</span>
+
+
+
+
+<!-- Custom directive -->
+
+<h1 appCustomDirective >Custom Directive</h1>

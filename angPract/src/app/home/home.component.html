@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="row"> 
+        <div class="col-md-4 card mt-4">
+        <div class="card-body">
+            <form action="#" #form="ngForm" (ngSubmit)="submit(form)">
+                <div class="form-group">
+                    <label for="uname">User Name:</label>
+                    <input type="text" name="uname" id="" class="form-control" placeholder="username" ngModel #uname="ngModel" (change)="checkname(uname)" required>
+                    <p class="text-danger" *ngIf="uname.invalid && uname.touched"><b>username reqiured</b></p>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Email address</label>
+                  <input name="email" type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" ngModel #email="ngModel" (change)="mailcheck(email)" required>
+                  <p *ngIf="email.invalid && email.touched" class="text-danger error alert alert-danger"><b>Email reqired</b></p>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Password</label>
+                  <input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"
+                  ngModel #password="ngModel" (change)="checkpass(password)" required >
+                  <div *ngIf="password.invalid && password.touched" class="text-danger alert alert-danger">
+                   Max 6 chars
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-success float-right"
+                [disabled]='!form.valid'>Submit</button>
+              </form>
+        </div>
+        </div>
+      </div>
+</div>
+
+
+
+

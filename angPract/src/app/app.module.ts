@@ -13,6 +13,11 @@ import { CustomDirectiveDirective } from './custom-directive.directive';
 import { DecoratorsComponent } from './decorators/decorators.component';
 import { LoginComponent } from './auth/login/login.component';
 import { SignupComponent } from './auth/signup/signup.component';
+import { HttpclientComponent } from './httpclient/httpclient.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ApiPractComponent } from './api-pract/api-pract.component';
+import { EmailServicesComponent } from './email-services/email-services.component';
+import { HttpservicesComponent } from './httpservices/httpservices.component';
 
 @NgModule({
   declarations: [
@@ -25,12 +30,17 @@ import { SignupComponent } from './auth/signup/signup.component';
     CustomDirectiveDirective,
     DecoratorsComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    HttpclientComponent,
+    ApiPractComponent,
+    EmailServicesComponent,
+    HttpservicesComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     RouterModule.forRoot([
       {path:"",component:HomeComponent},
       {path:"bindings",component:BindingsComponent},
@@ -38,6 +48,10 @@ import { SignupComponent } from './auth/signup/signup.component';
       {path:"decorators",component:DecoratorsComponent},
       {path:"login",component:LoginComponent},
       {path:"signup",component:SignupComponent},
+      {path:"httpclient",component:HttpclientComponent},
+      {path:"api-pract",component:ApiPractComponent},
+      {path:"email-services",component:EmailServicesComponent},
+      {path:"httpservices",component:HttpservicesComponent},
       {path:"**",component:PagenotfoundComponent}
       
     ])

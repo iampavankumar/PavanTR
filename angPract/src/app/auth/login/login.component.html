@@ -3,10 +3,11 @@
         <div class="col-md-12 card mt-4" appCustomDirective>
             <div class="card-body">
                 <form #lform="ngForm" (ngSubmit)="submit(lform)">
+                    
                     <div class="form-group">
                         <label for="uname">Email address</label>
                         <input type="text" class="form-control" id=""  placeholder="Enter email" name="uname"
-                        ngModel #uname="ngModel" (change)="checkName(uname)" required>
+                        ngModel #uname="ngModel" (change)="checkName(uname)" required >
                         <div class="alert alert-danger text-danger" *ngIf="uname.invalid && uname.touched">
                             <!-- <p *ngIf="uname.errors.required">username req</p> -->
                         </div>
@@ -16,13 +17,13 @@
                     <div class="form-group">
                         <label for="exampleInputPassword1">Password</label>
                         <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password" 
-                        ngModel #password="ngModel" (change)="checkPassword(password)" required>
+                        ngModel #password="ngModel" (change)="checkPassword(password)" required >
                         
+                        <div class="alert alert-danger" *ngIf="password.invalid && password.touched">
+                            <p>Password required</p>
+                        </div>
                     </div>
-                    <div class="form-group form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                    </div>
+                   
                     
                     <button type="submit" class="btn btn-primary" [disabled]='!lform.valid' >Submit</button>
                 </form>

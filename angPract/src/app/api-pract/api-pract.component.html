@@ -1,0 +1,26 @@
+<form action="" class="mt-10" >
+    <div class="form-group" >
+        <input type="text" class="form-control" placeholder="Enter a city" #city (keyup.enter)="addData(city)">
+        <!-- <input type="text" class="form-control" placeholder="Enter a name" #name (keyup.enter)="addData1(name)"> -->
+        
+    </div>
+    <button class="btn btn-success">Add Data</button>
+</form>
+
+<table class="table table-dark">
+    <thead>
+      <tr>
+        <th scope="col">city</th>
+        <th scope="col">name</th>
+        <th>Remove</th> 
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of posts">
+        <td>{{item.city}}</td>
+        <td>{{item.name}}</td>
+        <td><button class="btn btn-light" (click)="del(item)">Delete</button></td>
+      </tr>
+      
+    </tbody>
+  </table>

@@ -7,36 +7,6 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-  
-
-  constructor() { }
-  
-
-  SignUpform=new FormGroup({
-    firstName1:new FormControl(''),
-    last : new FormControl('')
-  });
-
-  get firstName1(){
-    return this.SignUpform.get("firstName1")
-  }
-
-  get lname():any{
-    return this.SignUpform.get('last');
-  }
-
-
-  // submit(SignUpform:any){
-  //   console.log(SignUpform.value);
-    
-  // }
-  onSubmit() {
-  }
-
-  ngOnInit(): void {
-  }
-
-  
   states = [
     'Andhra Pradesh',
     'Arunachal Pradesh',
@@ -75,6 +45,22 @@ export class SignupComponent implements OnInit {
     'Lakshadweep',
     'Puducherry',
   ];
+
+  constructor() { }
+  ngOnInit(): void {
+  }
+  register= new FormGroup({
+    email: new FormControl("",[Validators.required]),
+    password: new FormControl("",[Validators.required])
+  })
+  
+  get email(){
+    return this.register.get("email");
+  }
+  get password(){
+    return this.register.get("password");
+  }
+
 }
 
 
